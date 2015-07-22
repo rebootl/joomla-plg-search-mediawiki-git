@@ -28,7 +28,7 @@
                 />
 
                 <field name="wiki_baseurl" type="text"
-                    default="localhost"
+                    default="http://"
                     description="PLG_SEARCH_MEDIAWIKI_WIKIBASEURL_DESC"
                     label="PLG_SEARCH_MEDIAWIKI_WIKIBASEURL_LABEL"
                     size="25"

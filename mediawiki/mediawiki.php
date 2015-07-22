@@ -100,7 +100,7 @@ class PlgSearchMediawiki extends JPlugin
 		// Now retrieve the plugin parameters like this:
 		//$nameofparameter = $this->params->get('nameofparameter', defaultsetting );
         $wiki_title = $this->params->get('wiki_title', 'Wiki');
-        $wiki_baseurl = $this->params->get('wiki_baseurl', '');
+        $wiki_baseurl = $this->params->get('wiki_baseurl', 'http://');
 
         $limit = $this->params->get('search_limit', 20);
         // access a different database
