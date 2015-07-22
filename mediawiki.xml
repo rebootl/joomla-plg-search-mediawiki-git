@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="search">
+	<name>Search - Mediawiki</name>
+	<creationDate>2015-07-20</creationDate>
+	<author>Cem, revamp-it</author>
+	<authorEmail>cem.aydin@revamp-it.ch</authorEmail>
+	<authorUrl>www.revamp-it.ch</authorUrl>
+	<copyright>Copyright 2015 revamp-it</copyright>
+	<license>GNU General Public License version 2 or later;</license>
+	<version>0.0.1</version>
+	<description>Search Mediawiki Database</description>
+	<files>
+   		<filename plugin="mediawiki">mediawiki.php</filename>
+	</files>
+	<languages>
+   		<language tag="de-DE">language/de-DE/de-DE.plg_search_mediawiki.ini</language>
+   		<language tag="en-GB">language/en-GB/en-GB.plg_search_mediawiki.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+
+                <field name="wiki_title" type="text"
+                    default="Wiki"
+                    description="PLG_SEARCH_MEDIAWIKI_WIKITITLE_DESC"
+                    label="PLG_SEARCH_MEDIAWIKI_WIKITITLE_LABEL"
+                    size="25"
+                />
+
+                <field name="wiki_baseurl" type="text"
+                    default="localhost"
+                    description="PLG_SEARCH_MEDIAWIKI_WIKIBASEURL_DESC"
+                    label="PLG_SEARCH_MEDIAWIKI_WIKIBASEURL_LABEL"
+                    size="25"
+                />
+
+				<field name="search_limit" type="text"
+					default="20"
+					description="JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC"
+					label="JFIELD_PLG_SEARCH_SEARCHLIMIT_LABEL"
+					size="5"
+				/>
+ 
+                <field name="db_hostname" type="text"
+                    default="localhost"
+                    description="PLG_SEARCH_MEDIAWIKI_DBHOSTNAME_DESC"
+                    label="PLG_SEARCH_MEDIAWIKI_DBHOSTNAME_LABEL"
+                    size="25"
+                />
+
+                <field name="db_database" type="text"
+                    default=""
+                    description="PLG_SEARCH_MEDIAWIKI_DBNAME_DESC"
+                    label="PLG_SEARCH_MEDIAWIKI_DBNAME_LABEL"
+                    size="25"
+                />
+
+                <field name="db_user" type="text"
+                    default=""
+                    description="PLG_SEARCH_MEDIAWIKI_DBUSER_DESC"
+                    label="PLG_SEARCH_MEDIAWIKI_DBUSER_LABEL"
+                    size="25"
+                />
+
+                <field name="db_password" type="text"
+                    default=""
+                    description="PLG_SEARCH_MEDIAWIKI_DBPASSWORD_DESC"
+                    label="PLG_SEARCH_MEDIAWIKI_DBPASSWORD_LABEL"
+                    size="25"
+                />
+
+                <field name="db_prefix" type="text"
+                    default=""
+                    description="PLG_SEARCH_MEDIAWIKI_DBPREFIX_DESC"
+                    label="PLG_SEARCH_MEDIAWIKI_DBPREFIX_LABEL"
+                    size="25"
+                />
+            </fieldset>
+		</fields>
+	</config>
+</extension>
