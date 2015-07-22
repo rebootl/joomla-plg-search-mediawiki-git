@@ -1,5 +1,4 @@
 <?php
-//First start with information about the Plugin and yourself. For example:
 /**
  * @package     Joomla.Plugin
  * @subpackage  Search.Mediawiki
@@ -8,9 +7,12 @@
  * @license     GNU/GPL
  */
 
+// based on example from: https://docs.joomla.org/J3.x:Creating_a_search_plugin
+
 // cem
 // 2015-07-02: adaptions marked with [1]
 // 2015-07-21: adaptions marked with [2]
+// 2015-07-22: adaptions marked with [3], started git tracking
 
 //To prevent accessing the document directly, enter this code:
 // no direct access
@@ -119,12 +121,8 @@ class PlgSearchMediawiki extends JPlugin
         // Database prefix (may be empty)
         $db_settings['prefix']   = $this->params->get('db_prefix', '');
 
-
-
         // initialize db driver
         $db_wiki = JDatabaseDriver::getInstance( $db_settings );
-
-        //echo("TEST");
 
         // [2] removed example code
 
@@ -155,10 +153,6 @@ class PlgSearchMediawiki extends JPlugin
         //
         // any: 'apple banana'
         // all: '+apple +banana'
-
-        //$search_str_esc = $db->escape($search_str);
-        //$search_str_esc = $search_str;
-
         switch ($mode) {
             case 'any':
                 // quote and escape
@@ -180,12 +174,9 @@ class PlgSearchMediawiki extends JPlugin
         }
 
         $query->select("page_id, page_namespace, page_title, SUBSTRING(text.old_text, 1, 240) as textpart, rev_timestamp");
+        // try to get text around search expr, not working yet...
         //$query->select("page_id, page_namespace, page_title, SUBSTRING(text.old_text, LOCATE(".$search_expr_qesc.", text.old_text)-120, LOCATE(".$search_expr_qesc.", text.old_text)+120)as textpart, rev_timestamp");
-        //$query->select("page_id, page_namespace, page_title, old_text");
         $query->from("page,searchindex,text,revision");
-        //$query->leftJoin("revision ON revision.rev_page=page.page_id");
-        //$query->leftJoin("text ON text.old_id=revision.rev_text_id");
-        //$query->where("page_id=si_page AND MATCH(si_text) AGAINST('".$search_str."' IN BOOLEAN MODE) AND page_is_redirect=0 AND page_namespace IN (0)");
 
         $query->where("page.page_latest=revision.rev_id AND revision.rev_text_id = text.old_id AND page_id=si_page AND MATCH(si_text) AGAINST(".$search_expr_qesc." IN BOOLEAN MODE) AND page_is_redirect=0 AND page_namespace IN (0)");
 
@@ -221,6 +212,7 @@ class PlgSearchMediawiki extends JPlugin
         // assemble the result
         $res_arr = array();
 
+        // [3] finished coding below
         foreach($res_obj_list as $key => $obj) {
             // (get the date)
             $date_obj = DateTime::createFromFormat('YmdHis', $obj->rev_timestamp);
@@ -237,7 +229,6 @@ class PlgSearchMediawiki extends JPlugin
         return $res_arr;
 
 /*
-
         // [1] assemble a pseudo result for testing, adapted from tutorial
         // [1] set variables
         $date_now = date("Y-m-d H:i:s");
@@ -256,19 +247,6 @@ Database host: ".$db_settings['host'].
             'browsernav'  => '1'
         );
         return $rows;
-
 */
-
-/*
-        // Password for database authentication
-        $db_settings['password'];
-        // Database name
-        $db_settings['database'];
-        // Database prefix (may be empty)
-        $db_settings['prefix'];
-*/
-
-    	//Return the search results in an array
-//	    return $res_obj_list;
 	}
 }
