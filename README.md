@@ -15,4 +15,4 @@ Then activate the plugin under Extensions --> Plugins.
 Configure the plugin, with the mediawiki database etc.
 The mediawiki database user needs `SELECT` permission, at least.
 
-Siehe auch: [http://wiki.revamp-it.ch/index.php?title=Revamp_Webseite:_Übergreifende_Suche#Mediawiki_Plugin](http://wiki.revamp-it.ch/index.php?title=Revamp_Webseite:_%C3%9Cbergreifende_Suche#Mediawiki_Plugin) (german)
+Siehe auch: [http://wiki.revamp-it.ch/index.php?title=Joomla_Mediawiki_Search_Plugin](http://wiki.revamp-it.ch/index.php?title=Joomla_Mediawiki_Search_Plugin) (german)

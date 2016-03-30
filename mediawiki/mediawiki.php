@@ -13,6 +13,8 @@
 // 2015-07-02: adaptions marked with [1]
 // 2015-07-21: adaptions marked with [2]
 // 2015-07-22: adaptions marked with [3], started git tracking
+// 2016-03-29: [4], fix Issue #1 https://github.com/rebootl/joomla-plg-search-mediawiki-git/issues/1
+//             (mediawiki db table prefix)
 
 //To prevent accessing the document directly, enter this code:
 // no direct access
@@ -176,7 +178,9 @@ class PlgSearchMediawiki extends JPlugin
         $query->select("page_id, page_namespace, page_title, SUBSTRING(text.old_text, 1, 240) as textpart, rev_timestamp");
         // try to get text around search expr, not working yet...
         //$query->select("page_id, page_namespace, page_title, SUBSTRING(text.old_text, LOCATE(".$search_expr_qesc.", text.old_text)-120, LOCATE(".$search_expr_qesc.", text.old_text)+120)as textpart, rev_timestamp");
-        $query->from("page,searchindex,text,revision");
+        // [4] fix db table prefix
+        //$query->from("page,searchindex,text,revision");
+        $query->from("#__page AS page, #__searchindex AS searchindex, #__text AS text, #__revision AS revision");
 
         $query->where("page.page_latest=revision.rev_id AND revision.rev_text_id = text.old_id AND page_id=si_page AND MATCH(si_text) AGAINST(".$search_expr_qesc." IN BOOLEAN MODE) AND page_is_redirect=0 AND page_namespace IN (0)");
 

@@ -5,9 +5,9 @@
 	<author>Cem, revamp-it</author>
 	<authorEmail>cem.aydin@revamp-it.ch</authorEmail>
 	<authorUrl>www.revamp-it.ch</authorUrl>
-	<copyright>Copyright 2015 revamp-it</copyright>
+	<copyright>Copyright 2015, 2016 revamp-it</copyright>
 	<license>GNU General Public License version 2 or later;</license>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<description>Search Mediawiki Database</description>
 	<files>
    		<filename plugin="mediawiki">mediawiki.php</filename>
