@@ -14,6 +14,7 @@
 	</files>
 	<languages>
    		<language tag="de-DE">language/de-DE/de-DE.plg_search_mediawiki.ini</language>
+        <language tag="fr-FR">language/fr-FR/fr-FR.plg_search_mediawiki.ini</language>
    		<language tag="en-GB">language/en-GB/en-GB.plg_search_mediawiki.ini</language>
 	</languages>
 	<config>
