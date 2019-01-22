@@ -175,7 +175,7 @@ class PlgSearchMediawiki extends JPlugin
                 $search_expr_qesc = $db_wiki->quote($search_expr_esc, false);
         }
 
-        $query->select("page_id, page_namespace, page_title, SUBSTRING(text.old_text, 1, 240) as textpart, rev_timestamp");
+        $query->select("page_id, page_namespace, page_title, text.old_text as textpart,text.old_flags,rev_timestamp");	   
         // try to get text around search expr, not working yet...
         //$query->select("page_id, page_namespace, page_title, SUBSTRING(text.old_text, LOCATE(".$search_expr_qesc.", text.old_text)-120, LOCATE(".$search_expr_qesc.", text.old_text)+120)as textpart, rev_timestamp");
         // [4] fix db table prefix
@@ -220,6 +220,13 @@ class PlgSearchMediawiki extends JPlugin
         foreach($res_obj_list as $key => $obj) {
             // (get the date)
             $date_obj = DateTime::createFromFormat('YmdHis', $obj->rev_timestamp);
+		   $flags = explode( ',', $obj->old_flags );
+		   if (in_array( 'gzip', $flags )) {
+			  $obj->textpart = substr( gzinflate($obj->textpart), 0, 240);
+		   }
+		   else  {
+			  $obj->textpart = substr($obj->textpart, 0, 240);
+		   }
             $res_arr[$key] = (object) array(
                 'href'        => $wiki_baseurl.'index.php?title='.$obj->page_title,
                 'title'       => $obj->page_title,
