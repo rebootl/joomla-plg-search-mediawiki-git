@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.1" type="plugin" group="search">
-	<name>Search - Mediawiki</name>
-	<creationDate>2015-07-20</creationDate>
-	<author>Cem, revamp-it</author>
+<extension version="3.0" type="plugin" group="search">
+	<name>plg_search_ediawiki</name>
+	<creationDate>July 2015</creationDate>
+	<author>Cem Aydin</author>
 	<authorEmail>cem.aydin@revamp-it.ch</authorEmail>
-	<authorUrl>www.revamp-it.ch</authorUrl>
-	<copyright>Copyright 2015, 2016 revamp-it</copyright>
+	<authorUrl>https://github.com/rebootl/</authorUrl>
+	<copyright>Copyright 2019 Cem Aydin</copyright>
 	<license>GNU General Public License version 2 or later;</license>
-	<version>0.0.2</version>
+	<version>1.0.0</version>
 	<description>Search Mediawiki Database</description>
 	<files>
    		<filename plugin="mediawiki">mediawiki.php</filename>

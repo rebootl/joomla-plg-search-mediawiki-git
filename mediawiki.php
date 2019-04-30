@@ -3,7 +3,7 @@
  * @package     Joomla.Plugin
  * @subpackage  Search.Mediawiki
  *
- * @copyright   Copyright 2015 revamp-it
+ * @copyright   Copyright 2015 Cem Aydin
  * @license     GNU/GPL
  */
 
