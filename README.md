@@ -1,4 +1,5 @@
-# joomla-plg-search-mediawiki-git
+# plg_search_mediawiki
+
 Joomla search plugin for mediawiki database (Joomla 3+)
 (a simple search plugin)
 
@@ -6,7 +7,7 @@ Install as a normal Joomla plugin.
 
 ## Manual installation
 
-The `mediawiki` folder goes to your `<joomla-root>/search/plugins/`.
+The `plg_search_mediawiki` folder goes to your `<joomla-root>/search/plugins/`.
 
 In the Joomla backend (administrator), select Extensions --> Extensions --> Discover, Discover then install.
 
