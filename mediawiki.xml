@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0" type="plugin" group="search">
-	<name>plg_search_ediawiki</name>
-	<creationDate>July 2015</creationDate>
-	<author>Cem Aydin</author>
-	<authorEmail>cem.aydin@revamp-it.ch</authorEmail>
-	<authorUrl>https://github.com/rebootl/</authorUrl>
-	<copyright>Copyright 2019 Cem Aydin</copyright>
-	<license>GNU General Public License version 2 or later;</license>
-	<version>1.0.0</version>
-	<description>Search Mediawiki Database</description>
-	<files>
-   		<filename plugin="mediawiki">mediawiki.php</filename>
-	</files>
-	<languages>
-   		<language tag="de-DE">language/de-DE/de-DE.plg_search_mediawiki.ini</language>
+    <name>plg_search_ediawiki</name>
+    <creationDate>July 2015</creationDate>
+    <author>Cem Aydin</author>
+    <authorEmail>cem.aydin@revamp-it.ch</authorEmail>
+    <authorUrl>https://github.com/rebootl/</authorUrl>
+    <copyright>Copyright 2019 Cem Aydin</copyright>
+    <license>GNU General Public License version 2 or later;</license>
+    <version>1.0.0</version>
+    <description>Search Mediawiki Database</description>
+    <files>
+        <filename plugin="mediawiki">mediawiki.php</filename>
+    </files>
+    <languages>
+        <language tag="de-DE">language/de-DE/de-DE.plg_search_mediawiki.ini</language>
         <language tag="fr-FR">language/fr-FR/fr-FR.plg_search_mediawiki.ini</language>
-   		<language tag="en-GB">language/en-GB/en-GB.plg_search_mediawiki.ini</language>
-	</languages>
-	<config>
-		<fields name="params">
-			<fieldset name="basic">
+        <language tag="en-GB">language/en-GB/en-GB.plg_search_mediawiki.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
 
                 <field name="wiki_title" type="text"
                     default="Wiki"
@@ -35,12 +35,12 @@
                     size="25"
                 />
 
-				<field name="search_limit" type="text"
-					default="20"
-					description="JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC"
-					label="JFIELD_PLG_SEARCH_SEARCHLIMIT_LABEL"
-					size="5"
-				/>
+                <field name="search_limit" type="text"
+                    default="20"
+                    description="JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC"
+                    label="JFIELD_PLG_SEARCH_SEARCHLIMIT_LABEL"
+                    size="5"
+                />
  
                 <field name="db_hostname" type="text"
                     default="localhost"
@@ -77,6 +77,6 @@
                     size="25"
                 />
             </fieldset>
-		</fields>
-	</config>
+        </fields>
+    </config>
 </extension>
