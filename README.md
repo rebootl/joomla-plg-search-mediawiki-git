@@ -5,6 +5,8 @@ Joomla search plugin for mediawiki database (Joomla 3+)
 
 Install as a normal Joomla plugin.
 
+This plugin was created as part of my work for the NPO Verein revamp-it. Check it out under: http://www.revamp-it.ch
+
 ## Manual installation
 
 The `plg_search_mediawiki` folder goes to your `<joomla-root>/search/plugins/`.
