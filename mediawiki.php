@@ -136,7 +136,7 @@ class PlgSearchMediawiki extends JPlugin
         // an typical example query from: https://www.mediawiki.org/wiki/Manual:Searchindex_table
         //
         // SELECT page_id, page_namespace, page_title
-        //   FROM `page`,`searchindex`
+        //   FROM 'page','searchindex'
         //   WHERE page_id=si_page
         //     AND MATCH(si_text) AGAINST('+ltsp' IN BOOLEAN MODE)
         //     AND page_is_redirect=0 AND page_namespace IN (0) LIMIT 20;
