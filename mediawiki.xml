@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.0" type="plugin" group="search">
-    <name>plg_search_ediawiki</name>
+    <name>PLG_SEARCH_MEDIAWIKI_NAME</name>
     <creationDate>July 2015</creationDate>
     <author>Cem Aydin</author>
     <authorEmail>cem.aydin@revamp-it.ch</authorEmail>
