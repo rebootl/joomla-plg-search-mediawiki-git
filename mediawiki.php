@@ -169,6 +169,7 @@ class PlgSearchMediawiki extends JPlugin
                     // escape
                     $word_esc = $db_wiki->escape($word);
                     // reassemble
+                    $search_expr_esc = "";
                     $search_expr_esc .= "+".$word_esc." ";
                 }
                 // quote
