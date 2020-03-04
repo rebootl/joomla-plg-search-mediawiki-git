@@ -7,7 +7,7 @@
     <authorUrl>https://github.com/rebootl/</authorUrl>
     <copyright>Copyright 2019 Cem Aydin</copyright>
     <license>GNU General Public License version 2 or later;</license>
-    <version>1.1.4</version>
+    <version>1.1.5</version>
     <description>Search Mediawiki Database</description>
     <files>
         <filename plugin="mediawiki">mediawiki.php</filename>
