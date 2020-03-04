@@ -7,15 +7,18 @@
     <authorUrl>https://github.com/rebootl/</authorUrl>
     <copyright>Copyright 2019 Cem Aydin</copyright>
     <license>GNU General Public License version 2 or later;</license>
-    <version>1.1.2</version>
+    <version>1.1.3</version>
     <description>Search Mediawiki Database</description>
     <files>
         <filename plugin="mediawiki">mediawiki.php</filename>
     </files>
     <languages>
         <language tag="de-DE">language/de-DE/de-DE.plg_search_mediawiki.ini</language>
+        <language tag="de-DE">language/de-DE/de-DE.plg_search_mediawiki.sys.ini</language>
         <language tag="fr-FR">language/fr-FR/fr-FR.plg_search_mediawiki.ini</language>
+        <language tag="fr-FR">language/fr-FR/fr-FR.plg_search_mediawiki.sys.ini</language>
         <language tag="en-GB">language/en-GB/en-GB.plg_search_mediawiki.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_search_mediawiki.sys.ini</language>
     </languages>
     <updateservers>
         <server type="extension" name="plg_search_mediawiki github repository">https://raw.githubusercontent.com/rebootl/plg_search_mediawiki/master/update.xml</server>
@@ -66,7 +69,7 @@
                     size="25"
                 />
 
-                <field name="db_password" type="text"
+                <field name="db_password" type="password"
                     default=""
                     description="PLG_SEARCH_MEDIAWIKI_DBPASSWORD_DESC"
                     label="PLG_SEARCH_MEDIAWIKI_DBPASSWORD_LABEL"
