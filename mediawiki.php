@@ -165,6 +165,7 @@ class PlgSearchMediawiki extends JPlugin
                 // split
                 $words = explode( ' ', $search_str );
 
+                $search_expr_esc = "";
                 foreach ( $words as $word ) {
                     // escape
                     $word_esc = $db_wiki->escape($word);
@@ -175,7 +176,7 @@ class PlgSearchMediawiki extends JPlugin
                 $search_expr_qesc = $db_wiki->quote($search_expr_esc, false);
         }
 
-        $query->select("page_id, page_namespace, page_title, text.old_text as textpart,text.old_flags,rev_timestamp");     
+        $query->select("page_id, page_namespace, page_title, text.old_text as textpart,text.old_flags,rev_timestamp");
         // try to get text around search expr, not working yet...
         //$query->select("page_id, page_namespace, page_title, SUBSTRING(text.old_text, LOCATE(".$search_expr_qesc.", text.old_text)-120, LOCATE(".$search_expr_qesc.", text.old_text)+120)as textpart, rev_timestamp");
         // [4] fix db table prefix
